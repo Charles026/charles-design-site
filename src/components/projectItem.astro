@@ -1,0 +1,15 @@
+---
+import styles from "./projectItem.module.css";
+import { Image } from '@astrojs/image/components';
+const { link, image } = Astro.props;
+---
+
+<div class={styles.projectItem}>
+    
+<a href={link}>
+<h1>hello React</h1>
+        <Image class=" rounded-xl" src={image ? image : undefined} alt="project image" width={1000} aspectRatio={"16:9"}></Image>
+    </a>
+
+</div>
+
