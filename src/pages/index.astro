@@ -1,14 +1,25 @@
 ---
 import BaseLayout from '../layouts/baseLayout.astro';
 import ProjectItem from '../components/projectItem.astro';
-import imageUrl from '../images/img_4-6_23-26-31.jpg';
+
+const data = [
+	{
+		link: 'https://www.google.com',
+		image: '../src/images/test.jpg',
+	},
+	{
+		link: 'https://www.google.com',
+		image: '../src/images/test.jpg',
+	},
+]
+
+
 ---
 
 <BaseLayout>
-
 		<h1 class="text-3xl font-bold ">
 			Hello Charles!
 		  </h1>
-		  <ProjectItem link="https://www.google.com" image={imageUrl} />
+		  {data.map(({ link, image }) => ( <ProjectItem key={link} link={link} image={image} /> ))}
 </BaseLayout>
 
